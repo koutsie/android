@@ -1,4 +1,4 @@
-# this script might be hella outdated because its originally from 2015, ive updated it once in 2017 and now just glanced at it: it might work or it might not. i might updae this for newer android versions.
+# this script might be hella outdated because its originally from 2015, ive updated it once in 2017 and now just glanced at it: it might work or it might not. i might update this for newer android versions.
 
 echo "                                     ";
 echo "  _ __ ___ _ __ ___   _____   ___ __ ";
