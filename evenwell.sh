@@ -1,6 +1,5 @@
 #!/bin/bash
-
-shell settings put global setting.duraspeed.enabled 0
+echo "Let's go nuking!"
 adb shell pm uninstall --user 0 com.evenwell.DbgCfgTool
 adb shell pm uninstall --user 0 com.evenwell.DbgCfgTool.overlay.base.s600ww
 adb shell pm uninstall --user 0 com.evenwell.DbgCfgTool.overlay.base.s600id
@@ -79,7 +78,14 @@ adb shell pm uninstall --user 0 com.evenwell.pandorasbox
 adb shell pm uninstall --user 0 com.evenwell.UsageStatsLogReceiver.data.overlay.base.s600ww
 adb shell pm uninstall --user 0 com.evenwell.UsageStatsLogReceiver.data.overlay.back.s600id
 adb shell pm uninstall --user 0 com.evenwell.UsageStatsLogReceiver
-adb shell rm -r /data/dalvik-cache
-adb shell rm -rf /data/dalvik-cache
-reboot
-adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done; ; adb reboot
+echo "Waiting for boot to finish, and disabling duraspeed."
+# Note to self; Duraspeed will enabled on every reboot; add this to the main android device script!
+adb reboot
+adb wait-for-device
+A=$(adb shell getprop sys.boot_completed | tr -d '\r')
+while [ "$A" != "1" ]; do
+        sleep 5
+        A=$(adb shell getprop sys.boot_completed | tr -d '\r')
+done
+adb shell settings put global setting.duraspeed.enabled 0
+echo "All done, enjoy the debloat!"
