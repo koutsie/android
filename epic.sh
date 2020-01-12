@@ -1,19 +1,5 @@
 # this script might be hella outdated because its originally from 2015, ive updated it once in 2017 and now just glanced at it: it might work or it might not. i might update this for newer android versions.
 
-echo "                                     ";
-echo "  _ __ ___ _ __ ___   _____   ___ __ ";
-echo " | '__/ _ \ '_ \` _ \ / _ \ \ / / '__|";
-echo " | | |  __/ | | | | | (_) \ V /| |   ";
-echo " |_|  \___|_| |_| |_|\___/_\_/_|_|   ";
-echo "                         / | / _ \   ";
-echo "                         | || | | |  ";
-echo "                         | || |_| |  ";
-echo "                         |_(_)___/   ";
-echo "                                     ";
-echo "by koutsie"
-
-
-
 rm -rf /system/app/GoogleNow.apk
 rm -rf /system/app/GoogleNowVoiceSearch.apk
 rm -rf /system/app/GooglePartnerSetup.apk
